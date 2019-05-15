@@ -5,7 +5,7 @@ ruby '2.6.0'
 
 gem 'devise'
 gem "haml-rails", "~> 2.0"
-gem "figaro"
+gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
