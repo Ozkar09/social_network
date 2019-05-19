@@ -1,0 +1,58 @@
+%h2.title.is-3 Regístrate
+%hr
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+
+  .field
+    = f.label "Correo electrónico*", class: "label"
+    .control
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
+
+  .field
+    = f.label "Contraseña*", class: "label"
+    .control
+      = f.password_field :password, autocomplete: "off", class: "input"
+    - if @minimum_password_length
+      %em.help (#{@minimum_password_length} caracteres mínimo)
+
+  .field
+    = f.label "Confirma contraseña*", class: "label"
+    .control
+      = f.password_field :password_confirmation, autocomplete: "off", class: "input"
+
+  .field
+    %label{ for: "user_user_name", class: "label" } Nombre de usuario
+    .control
+      = text_field_tag "user[user_name]", @user.user_name, class: "input"
+
+  .field
+    %label{ for: "user_name", class: "label" } Nombres
+    .control
+      = text_field_tag "user[name]", @user.name, class: "input"
+
+  .field
+    %label{ for: "user_last_name", class: "label" } Apellidos
+    .control
+      = text_field_tag "user[last_name]", @user.last_name, class: "input"
+
+  .field
+    %label{ for: "user_phone", class: "label" } Teléfono
+    .control
+      = text_field_tag "user[phone]", @user.phone, class: "input"
+
+  .field
+    %label{ for: "user_profession", class: "label" } Profesión
+    .control
+      = text_field_tag "user[profession]", @user.profession, class: "input"
+
+  .field
+    %label{ for: "user_image_url", class: "label" } Avatar(url)
+    .control
+      = text_field_tag "user[image_url]", @user.image_url, class: "input"
+
+  .has-text-rigth
+    = f.submit "Registrarme", class: "button is-success is-fullwidth"
+
+.has-text-centered.medium-margin-top
+  = render "devise/shared/links"

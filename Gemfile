@@ -6,6 +6,8 @@ ruby '2.6.0'
 gem 'devise'
 gem "haml-rails", "~> 2.0"
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
+gem "font-awesome-rails"
+gem 'friendly_id', '~> 5.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

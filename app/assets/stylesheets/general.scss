@@ -1,0 +1,16 @@
+html, body{
+  background-color: #F9C29F;
+}
+
+.main-title{
+  margin-bottom: 30px;
+  font-family: 'Pacifico';
+}
+
+.main-title-link{
+  color: black;
+  font-size: 70px;
+  &:hover{
+    color: orange;
+  }
+}

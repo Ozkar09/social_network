@@ -1,0 +1,45 @@
+%h2.title.is-3 Perfil
+%hr
+
+= form_tag "/sign_up_validation", method: :post do
+  %ul
+    - @user.errors.full_messages.each do |error|
+      %li= error
+
+  .field
+    %label{ for: "user_user_name", class: "label" } Nombre de usuario
+    .control
+      = text_field_tag "user[user_name]", @user.user_name, class: "input"
+
+  .field
+    %label{ for: "user_email", class: "label" } Correo electrónico
+    .control
+      = email_field_tag "user[email]", @user.email, require: true, class: "input"
+
+  .field
+    %label{ for: "user_name", class: "label" } Nombre
+    .control
+      = text_field_tag "user[name]", @user.name, class: "input"
+
+  .field
+    %label{ for: "user_last_name", class: "label" } Apellidos
+    .control
+      = text_field_tag "user[last_name]", @user.last_name, class: "input"
+
+  .field
+    %label{ for: "user_phone", class: "label" } Teléfono
+    .control
+      = text_field_tag "user[phone]", @user.phone, class: "input"
+
+  .field
+    %label{ for: "user_profession", class: "label" } Profesión
+    .control
+      = text_field_tag "user[profession]", @user.profession, class: "input"
+
+  .field
+    %label{ for: "user_image_url", class: "label" } Avatar(url)
+    .control
+      = text_field_tag "user[image_url]", @user.image_url, class: "input"
+
+  .has-text-right
+    = submit_tag "Completar registro", class: "button is-success is-fullwidth"

@@ -12,9 +12,10 @@
       .hero-body
         .columns
           .column.is-half.is-offset-one-quarter
-            .has-text-centered
-              %h1.title.is-1
-                = link_to "Orange", root_path
+            .has-text-centered.big-margin-bottom
+              %h1.title.is-1.main-title
+                %img{:height => "28", :src => "/assets/orange.png", :width => "120"}/
+                = link_to "Orange", root_path, class: 'main-title-link'
             .card
               .card-content
                 = yield
